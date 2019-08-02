@@ -12,7 +12,7 @@ class Login extends Component {
     }
 
 
-handleSubmit = (event,res) => {
+handleSubmit = (event) => {
         event.preventDefault();
         const Login = {
             username : event.target[0].value,
@@ -24,10 +24,17 @@ handleSubmit = (event,res) => {
     }else{
        Axios.get("http://localhost:5000/user/name/" + Login.username + "/" + Login.password)
             .then(response => {
-                console.log(response.data.Status)
-             this.setState({message: response.data.Status})
+                if(response.data.Status === "Not Logged In"){
+                    this.setState({message: "Password not valid"})
+                } else{
 
-            }).catch(error => {console.log("your wrong")});
+             this.setState({message: response.data.Status})
+                }
+            }).catch(error => {
+                  this.setState({message: "User does not exist"})
+
+
+            });
     }
         
     };
