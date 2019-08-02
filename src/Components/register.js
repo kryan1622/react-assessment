@@ -69,6 +69,7 @@ class Create extends Component {
           <Input type="password" />
         </FormGroup>
                     <br></br>
+                    <p style={{ color: 'red' }}>{this.state.error}</p>
                     <p style={{ color: 'red' }}>{this.state.error1}</p>
                     <p style={{ color: 'red' }}>{this.state.error2}</p>
                     <p style={{ color: 'red' }}>{this.state.error3}</p>
