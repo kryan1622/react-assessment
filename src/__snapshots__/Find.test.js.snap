@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render find 1`] = `
+<div>
+  <br />
+  <br />
+  <h1>
+     All Users 
+  </h1>
+  <br />
+  <br />
+  <br />
+  <h4>
+    Usernames
+  </h4>
+  <table
+    className="table"
+  >
+    <tbody />
+  </table>
+</div>
+`;

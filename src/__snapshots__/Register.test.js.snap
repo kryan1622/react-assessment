@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render register 1`] = `
+<div
+  className="container"
+>
+  <br />
+  <br />
+  <h4>
+     Create New User 
+  </h4>
+  <br />
+  <br />
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      className=""
+    >
+      Username
+    </label>
+    <input
+      className="form-control"
+      type="text"
+    />
+    <p
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    />
+    <label
+      className=""
+    >
+      Email
+    </label>
+    <input
+      className="form-control"
+      type="text"
+    />
+    <p
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    />
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="Password"
+      >
+        Password
+      </label>
+      <input
+        className="form-control"
+        type="password"
+      />
+    </div>
+    <p
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    />
+    <div
+      className="form-group"
+    >
+      <label
+        className=""
+        htmlFor="Password"
+      >
+        Re-enter Password
+      </label>
+      <input
+        className="form-control"
+        type="password"
+      />
+    </div>
+    <p
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    />
+    <p
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      
+    </p>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</div>
+`;

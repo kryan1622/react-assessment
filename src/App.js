@@ -5,9 +5,7 @@ import Example from './Components/navbar.js'
 
 function App() {
   return (
-    <div className="App">
    <Example />
-    </div>
   );
 }
 

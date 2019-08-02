@@ -27,7 +27,7 @@ handleSubmit = (event,res) => {
                 console.log(response.data.Status)
              this.setState({message: response.data.Status})
 
-            })
+            }).catch(error => {console.log("your wrong")});
     }
         
     };
