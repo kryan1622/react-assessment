@@ -12,25 +12,31 @@ class Login extends Component {
     }
 
 
-    handleSubmit = (event, res) => {
+handleSubmit = (event) => {
         event.preventDefault();
         const Login = {
             username: event.target[0].value,
             password: event.target[1].value
         }
 
-        if (Login.username === "" || Login.password === "") {
-            this.setState({ message: "Please fill in all fields" })
-        } else {
-            Axios.get("http://localhost:5000/user/name/" + Login.username + "/" + Login.password)
-                .then(response => {
-                    console.log(response.data.Status)
-                    this.setState({ message: response.data.Status })
+         if ( Login.username === "" || Login.password === "" ){
+        this.setState({message:"Please fill in all fields"})
+    }else{
+       Axios.get("http://localhost:5000/user/name/" + Login.username + "/" + Login.password)
+            .then(response => {
+                if(response.data.Status === "Not Logged In"){
+                    this.setState({message: "Password not valid"})
+                } else{
 
-                })
-        }
+             this.setState({message: response.data.Status})
+                }
+            }).catch(error => {
+                  this.setState({message: "User does not exist"})
 
 
+            });
+    }
+        
     };
 
     render() {
