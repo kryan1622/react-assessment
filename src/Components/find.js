@@ -37,7 +37,7 @@ componentDidMount(){
                     <tbody>
            {this.state.data.map(item => (
             <tr><td>  {item.username}  </td></tr>
-           ))};
+           ))}
             </tbody>
             </Table>
             </div>

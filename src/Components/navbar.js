@@ -17,16 +17,16 @@ export default class Example extends React.Component {
       <div>
           <Router> 
         <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/"> Login</NavbarBrand>
+          <NavbarBrand href="/">User Login</NavbarBrand>
              <Nav className="ml-auto" navbar>
                 <Link to="/find">Find Users</Link>
                  <Link to="/register">Register</Link>
-                 {/* <Link to="/">Login</Link>  */}
+                 <Link to="/">Login</Link> 
 
                  </Nav>
         </Navbar>
       
-        {/* <Route exact path="/" component={Login} /> */}
+        <Route exact path="/" component={Login} />
         <Route  exact path="/register" component={Create} />
         <Route path="/find" component={Find} />
 

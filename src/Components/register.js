@@ -24,7 +24,7 @@ class Create extends Component {
 
         Axios.post("http://localhost:5000/user/createuser", newItem)
             .then(response => {
-                if (newItem.username === "" || newItem.email === "" || newItem.password === "" || newItem.password2 === "") {
+                if (newItem.username === "" || newItem.email === "" || newItem.password === "" || newItem.password2 === "" || newItem.password !== newItem.password2) {
                    console.log(response);
                     this.setState({ 
                         error1: response.data.email, 
@@ -32,7 +32,11 @@ class Create extends Component {
                         error3:response.data.password,
                         error4: response.data.password2  })
                 } else {
-                    this.setState({ error: "User successfully created"})
+                    if(response.data.email ==="Email is invalid"){
+                    this.setState({ error: response.data.email})
+                    }else{
+                    this.setState({error: response.data.Status})
+                    }
                 }
             });
     }
@@ -55,25 +59,24 @@ class Create extends Component {
 
             </Label>
                     <Input type="text"></Input>
+                    <p style={{ color: 'red' }}>{this.state.error1}</p>
                     <Label>
                         Email
             </Label>
                     <Input type="text"></Input>
-
+<p style={{ color: 'red' }}>{this.state.error2}</p>
                      <FormGroup>
           <Label for="Password">Password</Label>
           <Input type="password" />
         </FormGroup>
+        <p style={{ color: 'red' }}>{this.state.error3}</p>
         <FormGroup>
           <Label for="Password">Re-enter Password</Label>
           <Input type="password" />
         </FormGroup>
-                    <br></br>
-                    <p style={{ color: 'red' }}>{this.state.error}</p>
-                    <p style={{ color: 'red' }}>{this.state.error1}</p>
-                    <p style={{ color: 'red' }}>{this.state.error2}</p>
-                    <p style={{ color: 'red' }}>{this.state.error3}</p>
-                    <p style={{ color: 'red' }}>{this.state.error4}</p>
+        <p style={{ color: 'red' }}>{this.state.error4}</p>
+    
+                    <p style={{ color: 'red' }}>{this.state.error}</p>                
                     <input type="submit" value="Submit" />
                 </form>
             </div>
