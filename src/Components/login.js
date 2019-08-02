@@ -4,7 +4,7 @@ import Axios from 'axios';
 
 class Login extends Component {
 
-  constructor() {
+    constructor() {
         super();
         this.state = {
             message: "",
@@ -15,7 +15,7 @@ class Login extends Component {
 handleSubmit = (event) => {
         event.preventDefault();
         const Login = {
-            username : event.target[0].value,
+            username: event.target[0].value,
             password: event.target[1].value
         }
 
@@ -41,7 +41,7 @@ handleSubmit = (event) => {
 
     render() {
         return (
-        <div className="container">
+            <div className="container">
                 <br></br>
                 <br></br>
                 <h4> Login </h4>
@@ -55,14 +55,14 @@ handleSubmit = (event) => {
             </Label>
                     <Input type="text"></Input>
                     <FormGroup>
-          <Label for="Password">Password</Label>
-          <Input type="password" />
-        </FormGroup>                 
+                        <Label for="Password">Password</Label>
+                        <Input type="password" />
+                    </FormGroup>
                     <br></br>
-                    <p style={{color: 'red'}}>{this.state.message}</p>
+                    <p style={{ color: 'red' }}>{this.state.message}</p>
                     <input type="submit" name="clickme" value="Submit" />
                 </form>
-            </div>    
+            </div>
         )
     }
 }
