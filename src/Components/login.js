@@ -12,7 +12,7 @@ class Login extends Component {
     }
 
 
-handleSubmit = event => {
+handleSubmit = (event,res) => {
         event.preventDefault();
         const Login = {
             username : event.target[0].value,
@@ -27,7 +27,7 @@ handleSubmit = event => {
                 console.log(response.data.Status)
              this.setState({message: response.data.Status})
 
-            });
+            })
     }
         
     };
