@@ -24,7 +24,7 @@ class Create extends Component {
 
         Axios.post("http://localhost:5000/user/createuser", newItem)
             .then(response => {
-                if (newItem.username === "" || newItem.email === "" || newItem.password === "" || newItem.password2 === "") {
+                if (newItem.username === "" || newItem.email === "" || newItem.password === "" || newItem.password2 === "" || newItem.password !== newItem.password2) {
                    console.log(response);
                     this.setState({ 
                         error1: response.data.email, 
